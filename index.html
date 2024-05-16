@@ -12,10 +12,47 @@
             <h1>JavaScript <br> <span>Age Calculator</span></h1>
             <div class="input-box">
                 <input type="date"  id="date">
-                <button>Calculate</button>
+                <button onclick="calculateAge">Calculate</button>  
             </div>
         </div>
     </div>
-    
+    <script>
+        let userInput = document.getElementById("date");
+            userInput.max = new Date().toISOString().split("T")[0]; //Excecuted to limit the date range max to todays date
+
+            function calculateAge(){
+            let birthDate = new Date(userInput.value);
+
+            let d1 = today.getDate();
+            let m1 = today.getMonth() + 1; //month will be 1  for jan and 12 for dec that is why it is +1
+            let y1 = today.getFullYear();
+
+            let today = new Date();
+
+            let d2 = today.getDate();
+            let m2 = today.getMonth() + 1;
+            let y2 = today.getFullYear();
+
+            let d3,m3,y3; //to store the diffrence of todays date and birthday to calculate the age
+            y3 = y1 - y2;
+
+            if(m2>=m1){
+                m3 = m2 - m1;
+            }
+            else{
+                y3--;
+                m3 = 12 + m2 - m1;
+            }
+
+            if(d2>=d1){
+              d3 = d2 - d1;  
+            }else{
+
+            }
+
+
+            }   
+        
+    </script>
 </body>
 </html>
