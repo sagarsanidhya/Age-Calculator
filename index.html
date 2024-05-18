@@ -14,11 +14,13 @@
                 <input type="date"  id="date">
                 <button onclick="calculateAge()">Calculate</button>  
             </div>
+            <p id="result"></p>
         </div>
     </div>
     <script>
         let userInput = document.getElementById("date");
             userInput.max = new Date().toISOString().split("T")[0]; //Excecuted to limit the date range max to todays date
+            let result = document.getElementById("result");
 
             function calculateAge(){
             let birthDate = new Date(userInput.value);
@@ -59,7 +61,7 @@
                 m3 =11;
                 y3--;
             }
-            console.log(y3,m3,d3);
+            result.innerHTML = `You are <span> ${y3} </span> years , <span> ${m3} </span> months , <span> ${d3} </span> days old.`; //here inner html is used to get conent from result present in HTML
 
             }   
         
